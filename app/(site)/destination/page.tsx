@@ -77,8 +77,12 @@ const Destination = () => {
             className="-z-10"
           >
             <Image
-              src={"/" + data?.destinations[selected].images.webp}
-              alt="moon"
+              src={
+                data
+                  ? data.destinations[selected].images.webp
+                  : "assets/favicon.png"
+              }
+              alt={"destination-image"}
               width={350}
               height={350}
               className="lg:ml-5 mb-20 lg:mb-0"

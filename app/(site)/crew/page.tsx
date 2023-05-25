@@ -75,7 +75,12 @@ const Crew = () => {
               {data?.crew[selected].bio}
             </p>
           </motion.div>
-          <motion.div variants={zoomIn(0.3, 0.5)} initial='hidden' whileInView={'show'} className="flex gap-6">
+          <motion.div
+            variants={zoomIn(0.3, 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            className="flex gap-6"
+          >
             {data?.crew.map((item, index) => (
               <div
                 key={index}
@@ -86,7 +91,7 @@ const Crew = () => {
           </motion.div>
         </div>
         <Image
-          src={"/" + data?.crew[selected].images.webp}
+          src={data ? data.crew[selected].images.webp : "assets/favicon.png"}
           alt="crew-image"
           width={400}
           height={400}
@@ -94,7 +99,7 @@ const Crew = () => {
         />
       </div>
       <Image
-        src={"/" + data?.crew[selected].images.webp}
+        src={data ? data.crew[selected].images.webp : "assets/favicon.png"}
         alt="crew-image"
         width={400}
         height={400}

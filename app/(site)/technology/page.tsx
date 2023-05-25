@@ -19,7 +19,10 @@ const Technology = () => {
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
-    axios.get("./data.json").then((response) => setData(response.data));
+    axios
+      .get("./data.json")
+      .then((response) => setData(response.data))
+      .catch((error) => console.log(error.message));
   }, []);
 
   return (
@@ -96,7 +99,11 @@ const Technology = () => {
         </div>
 
         <Image
-          src={"/" + data?.technology[selected].images.portrait}
+          src={
+            data
+              ? data.technology[selected].images.portrait
+              : "/assets/favicon.png"
+          }
           alt="image"
           width={300}
           height={300}
