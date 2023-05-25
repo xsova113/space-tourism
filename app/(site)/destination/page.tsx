@@ -80,7 +80,7 @@ const Destination = () => {
               src={
                 data
                   ? data.destinations[selected].images.webp
-                  : "assets/favicon.png"
+                  : "/assets/favicon.png"
               }
               alt={"destination-image"}
               width={350}

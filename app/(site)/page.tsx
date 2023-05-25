@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Bruno_Ace } from "next/font/google";
 import { motion } from "framer-motion";
 import { container, fadeIn, zoomIn } from "../utils/motion";
+import Link from "next/link";
 
 const brunoAce = Bruno_Ace({
   subsets: ["latin"],
@@ -59,14 +60,16 @@ export default function Home() {
             this world experience!
           </p>
         </div>
-        <motion.div
-          variants={zoomIn(0.3, 0.5)}
-          initial="hidden"
-          whileInView={"show"}
-          className={`p-20 w-[200px] h-[200px] rounded-[100%] bg-white flex items-center justify-center text-2xl ${brunoAce.className}`}
-        >
-          EXPLORE
-        </motion.div>
+        <Link href={"destination"}>
+          <motion.div
+            variants={zoomIn(0.3, 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            className={`p-20 w-[200px] h-[200px] rounded-[100%] bg-white flex items-center justify-center text-2xl ${brunoAce.className} hover:bg-gray-300`}
+          >
+            EXPLORE
+          </motion.div>
+        </Link>
       </motion.div>
     </div>
   );
