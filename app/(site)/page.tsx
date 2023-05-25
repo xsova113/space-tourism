@@ -65,7 +65,7 @@ export default function Home() {
             variants={zoomIn(0.3, 0.5)}
             initial="hidden"
             whileInView={"show"}
-            className={`p-20 w-[200px] h-[200px] rounded-[100%] bg-white flex items-center justify-center text-2xl ${brunoAce.className} hover:bg-gray-300`}
+            className={`p-20 w-[200px] h-[200px] rounded-[100%] bg-white flex items-center justify-center text-2xl ${brunoAce.className} ring-[50px] ring-transparent hover:ring-white/20 transition`}
           >
             EXPLORE
           </motion.div>
