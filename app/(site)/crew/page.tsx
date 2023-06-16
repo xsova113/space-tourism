@@ -27,21 +27,21 @@ const Crew = () => {
         alt="background-crew"
         height={1000}
         width={1000}
-        className="hidden lg:block absolute inset-0 w-full h-full -z-10"
+        className="hidden lg:block absolute inset-0 w-full h-screen -z-10"
       />
       <Image
         src={"/assets/crew/background-crew-tablet.jpg"}
         alt="background-crew"
-        height={1000}
+        height={2000}
         width={1000}
-        className="hidden sm:max-lg:block absolute inset-0 w-full min-h-full -z-10"
+        className="hidden sm:max-lg:block absolute inset-0 w-full min-h-screen -z-10"
       />
       <Image
         src={"/assets/crew/background-crew-mobile.jpg"}
         alt="background-crew"
-        height={1000}
+        height={2000}
         width={1000}
-        className="sm:hidden block absolute inset-0 w-full min-h-full -z-10"
+        className="sm:hidden block absolute inset-0 w-full min-h-screen -z-10"
       />
 
       <div className="flex flex-col lg:flex-row text-white lg:justify-between gap-[100px] overflow-hidden  h-full items-center">
@@ -84,26 +84,28 @@ const Crew = () => {
             {data?.crew.map((item, index) => (
               <div
                 key={index}
-                className="w-4 h-4 rounded-full bg-white/50 hover:bg-white transition cursor-pointer"
+                className={`w-4 h-4 rounded-full hover:bg-white ${
+                  selected === index ? "bg-white" : "bg-white/50"
+                } transition cursor-pointer`}
                 onClick={() => setSelected(index)}
               />
             ))}
           </motion.div>
         </div>
-        <Image
-          src={data ? data.crew[selected].images.webp : "assets/favicon.png"}
+        {/* <Image
+          src={data ? data.crew[selected].images.webp : "/assets/favicon.png"}
           alt="crew-image"
           width={400}
           height={400}
-          className="lg:hidden block relative bottom-0 md:max-lg:w-[350px] sm:w-[230px] w-[225px] h-auto transition-all"
-        />
+          className="lg:hidden md:max-lg:w-[350px] sm:w-[230px] w-[225px] h-auto"
+        /> */}
       </div>
       <Image
-        src={data ? data.crew[selected].images.webp : "assets/favicon.png"}
+        src={data ? data.crew[selected].images.webp : "/assets/favicon.png"}
         alt="crew-image"
-        width={400}
-        height={400}
-        className="hidden lg:block absolute right-[120px] bottom-0 md:max-lg:w-[350px] transition-all"
+        width={350}
+        height={350}
+        className="hidden lg:block absolute right-[120px] bottom-0 md:max-lg:w-[350px]"
       />
     </HeroWrapper>
   );
